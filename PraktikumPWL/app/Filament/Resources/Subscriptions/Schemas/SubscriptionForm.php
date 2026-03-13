@@ -19,9 +19,9 @@ class SubscriptionForm
             TextInput::make('name')
                 ->required(),
 
-            TextInput::make('price')
-                ->required()
-                ->numeric(),
+            // TextInput::make('price')
+            //     ->required()
+            //     ->numeric(),
 
             DatePicker::make('start_date')
                 ->required(),

@@ -14,7 +14,17 @@ class Subscription extends Model
         'name',
         'price',
         'start_date',
-        
+        'end_date'
     ];
+
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($subscription) {
+            $subscription->price = rand(50000, 900000);
+        });
+    }
 }
 
