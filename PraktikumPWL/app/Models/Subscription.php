@@ -14,7 +14,7 @@ class Subscription extends Model
         'name',
         'price',
         'start_date',
-        'end_date'
+        
     ];
 }
 
