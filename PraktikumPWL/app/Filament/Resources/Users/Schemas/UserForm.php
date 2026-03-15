@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Users\Schemas;
 
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
 
 class UserForm
 {
@@ -11,7 +12,6 @@ class UserForm
     {
         return $schema
             ->components([
-                //
                 TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -22,6 +22,7 @@ class UserForm
                 TextInput::make('password')
                     ->password()
                     ->required()
+                    ->minLength(6),
             ]);
     }
 }
