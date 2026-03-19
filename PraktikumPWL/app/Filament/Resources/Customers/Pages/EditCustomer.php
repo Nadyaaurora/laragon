@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Categories\Pages;
-use App\Filament\Resources\Categories\CategoryResource;
+namespace App\Filament\Resources\Customers\Pages;
+
+use App\Filament\Resources\Customers\CustomerResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditCategory extends EditRecord
+class EditCustomer extends EditRecord
 {
-    protected static string $resource = CategoryResource::class;
+    protected static string $resource = CustomerResource::class;
 
     protected function getHeaderActions(): array
     {

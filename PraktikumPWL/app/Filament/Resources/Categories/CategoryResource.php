@@ -9,6 +9,7 @@ use App\Filament\Resources\Categories\Schemas\CategoryForm;
 use App\Filament\Resources\Categories\Tables\CategoriesTable;
 use App\Models\Category;
 use BackedEnum;
+use UnitEnum;   
 use Filament\Support\Icons\Heroicon;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -18,9 +19,12 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedFolder;
-    protected static ?string $pluralModelLabel = 'Lessons';
-    protected static ?string $navigationLabel = 'Lessons';
+    protected static ?string $pluralModelLabel = 'Categories';
+    protected static ?string $navigationLabel = 'Categories';
     protected static ?string $recordTitleAttribute = 'name';
+    protected static string|UnitEnum|null $navigationGroup = 'Shop';
+    protected static ?int $navigationSort = 1;
+
 
     public static function form(Schema $schema): Schema
     {
