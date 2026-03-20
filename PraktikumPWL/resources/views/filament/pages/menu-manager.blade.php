@@ -14,14 +14,12 @@
         .location-box { width: fit-content; margin-bottom: 3rem !important; }
         .bintang-merah { color: #ff0000 !important; font-weight: bold !important; font-size: 1.1rem; }
         
-        /* Box Info Tengah */
         .info-box-center {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             text-align: center; padding: 1.5rem; background-color: rgba(255, 255, 255, 0.05);
             border-radius: 0.75rem; border: 1px dashed rgba(255, 255, 255, 0.1); margin-bottom: 1.5rem;
         }
 
-        /* Styling List Menu agar tidak Hitam Pekat & Pojok Kanan */
         .menu-item-box {
             background-color: #1f2937 !important; /* Abu-abu gelap (Gray 800) */
             border: 1px solid #374151 !important; /* Border Gray 700 */
@@ -32,7 +30,7 @@
             width: 100% !important;
         }
         .menu-item-right {
-            margin-left: auto !important; /* PAKSA POJOK KANAN */
+            margin-left: auto !important; 
             display: flex !important;
             align-items: center !important;
             gap: 1.5rem !important;

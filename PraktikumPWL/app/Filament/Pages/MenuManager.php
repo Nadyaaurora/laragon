@@ -19,16 +19,12 @@ class MenuManager extends BasePage implements HasForms
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-bars-3';
     protected static ?string $title = 'Menu Manager';
 
-    // 1. Wadah data buat Livewire (Langsung isi array kosong)
     public ?array $data = [];
 
-    // 2. Hubungkan Form ke variabel $data
     protected function getFormStatePath(): string
     {
         return 'data';
     }
-
-    // --- BAGIAN MOUNT DIHAPUS BIAR GAK ERROR ---
 
     protected function getHeaderActions(): array
     {
@@ -55,7 +51,6 @@ class MenuManager extends BasePage implements HasForms
 
     public function create(): void
     {
-        // Ambil data yang sudah divalidasi
         $state = $this->form->getState();
 
         MenuItem::create([
@@ -66,7 +61,7 @@ class MenuManager extends BasePage implements HasForms
             'parent_id' => null,
         ]);
 
-        $this->form->fill(); // Reset form setelah simpan
+        $this->form->fill(); 
         $this->dispatch('refreshTree');
 
         Notification::make()
@@ -82,7 +77,7 @@ class MenuManager extends BasePage implements HasForms
             'url' => $url,
             'target' => '_self',
             'order' => \App\Models\MenuItem::max('order') + 1,
-            'parent_id' => null, // GANTI INI! Jangan -1, pake null aja biar gak error.
+            'parent_id' => null,
         ]);
 
         $this->dispatch('refreshTree');
