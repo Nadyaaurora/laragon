@@ -12,7 +12,7 @@ class MenuItem extends Model
         'parent_id',
         'title',
         'url',
-        'targer',
+        'target',
         'type',
         'order'
     ];
@@ -35,3 +35,4 @@ class MenuItem extends Model
         });
     }
 }
+
