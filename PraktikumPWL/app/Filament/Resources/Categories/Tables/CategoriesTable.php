@@ -21,7 +21,6 @@ class CategoriesTable
                     ->searchable()
                     ->sortable(),
                     
-                // JURUS MANUAL TOTAL
                 TextColumn::make('members_names')
                     ->label('Member Names')
                     ->badge()
