@@ -14,6 +14,7 @@ use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Group;
 use Filament\Support\Icons\Heroicon;
 
 class PostForm
@@ -36,7 +37,11 @@ class PostForm
                         ->searchable(),
                     ColorPicker::make("color"),
                     MarkdownEditor::make("content"),
-                ]),
+                ])->columnSpan(2),
+                
+                //Grouping fields into 2 columns
+                Group::make([
+        
                 //section 2 - image
                 Section::make('Image Upload') 
                 ->schema([ 
@@ -44,15 +49,16 @@ class PostForm
                     ->disk('public') 
                     ->directory('post'),
                 ]),
+
                 // section 3 - meta
                 Section::make('Meta Information') 
                 ->schema([ 
                     TagsInput::make('tags'), 
                     Checkbox::make('published'), 
-                    DateTimePicker::make('published_at'), 
+                    DateTimePicker::make('published_at'),
                 ]),
-            ])->columns(2);
+                    ])->columnSpan(1),
+
+            ])->columns(3);
     }
 }
-
-
