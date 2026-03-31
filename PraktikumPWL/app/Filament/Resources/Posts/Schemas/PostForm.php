@@ -29,6 +29,8 @@ class PostForm
                 // -> icon(Heroicon::RocketLaunch)
                 -> icon('heroicon-o-document-text')
                 ->schema([
+                //grouping fields into 2 columns
+                Group::make([
                     TextInput::make('title'),
                     TextInput::make('slug'),
                     Select::make('category_id')
@@ -36,6 +38,7 @@ class PostForm
                         ->preload()
                         ->searchable(),
                     ColorPicker::make("color"),
+                ])->columns(2),
                     MarkdownEditor::make("content"),
                 ])->columnSpan(2),
                 
