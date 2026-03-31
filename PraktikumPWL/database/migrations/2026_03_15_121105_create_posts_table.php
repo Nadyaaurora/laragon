@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('author_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->text('content');
-            $table->softDeletes();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete(); // Ini untuk category
+            $table->string('color')->nullable(); // Ini kolom yang error sekarang
+            $table->string('image')->nullable();
+            $table->text('body')->nullable();
+            $table->json('tags')->nullable();
+            $table->boolean('published')->default(false);
+            $table->date('published_at')->nullable();
             $table->timestamps();
         });
     }

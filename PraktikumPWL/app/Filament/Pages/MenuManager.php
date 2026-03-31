@@ -106,3 +106,4 @@ class MenuManager extends BasePage implements HasForms
         ];
     }
 }
+

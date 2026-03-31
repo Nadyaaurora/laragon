@@ -22,7 +22,7 @@ class CategoriesTable
                     ->sortable(),
                     
                 TextColumn::make('members_names')
-                    ->label('Member Names')
+                    ->label('Slug')
                     ->badge()
                     ->getStateUsing(function ($record) {
                         $data = $record->members;
@@ -31,16 +31,16 @@ class CategoriesTable
                         return is_array($data) ? collect($data)->pluck('name')->implode(', ') : '-';
                     }),
                 
-                TextColumn::make('members_roles')
-                    ->label('Roles')
-                    ->badge()
-                    ->color('warning')
-                    ->getStateUsing(function ($record) {
-                        $data = $record->members;
-                        if (is_string($data)) $data = json_decode($data, true);
+                // TextColumn::make('members_roles')
+                //     ->label('Roles')
+                //     ->badge()
+                //     ->color('warning')
+                //     ->getStateUsing(function ($record) {
+                //         $data = $record->members;
+                //         if (is_string($data)) $data = json_decode($data, true);
                         
-                        return is_array($data) ? collect($data)->pluck('role')->implode(', ') : '-';
-                    }),
+                //         return is_array($data) ? collect($data)->pluck('role')->implode(', ') : '-';
+                //     }),
             ])
 
             ->recordActions([

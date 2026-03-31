@@ -12,8 +12,8 @@ class Post extends Model
         'slug', 
         'category_id', 
         'color', 
+        'content',
         'image', 
-        'body', 
         'tags', 
         'published', 
         'published_at', 
@@ -21,7 +21,7 @@ class Post extends Model
     protected $casts = [ 
         'tags' => 'array', 
         'published' => 'boolean',
-        'published_at' => 'date', 
+        'published_at' => 'datetime', 
     ];
     
     public function category() 
