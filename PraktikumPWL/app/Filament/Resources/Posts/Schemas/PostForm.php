@@ -36,7 +36,10 @@ class PostForm
                         ->maxLength(255),
                     TextInput::make('slug')
                         ->rules('required')
-                        ->unique(),
+                        ->unique()
+                        ->validationMessages([
+                            "unique" => "Slug must be unique"
+                        ]),
                     Select::make('category_id')
                         ->relationship("category", "name")
                         ->preload()
