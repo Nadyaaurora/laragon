@@ -32,8 +32,7 @@ class PostForm
                 //grouping fields into 2 columns
                 Group::make([
                     TextInput::make('title')
-                        ->rules(["required", "min:3", "max:10"])
-                        ->maxLength(255),
+                        ->rules('required | min:3 | max:10'),
                     TextInput::make('slug')
                         ->rules('required')
                         ->unique()
@@ -42,6 +41,7 @@ class PostForm
                         ]),
                     Select::make('category_id')
                         ->relationship("category", "name")
+                        ->required()
                         ->preload()
                         ->searchable(),
                     ColorPicker::make("color"),
@@ -56,6 +56,7 @@ class PostForm
                 Section::make('Image Upload') 
                 ->schema([ 
                     FileUpload::make('image') 
+                    ->required()
                     ->disk('public') 
                     ->directory('post'),
                 ]),
