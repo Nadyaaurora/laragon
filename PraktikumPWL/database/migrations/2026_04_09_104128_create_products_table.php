@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); 
-            $table->decimal('price', 15, 2)->default(0); 
-            $table->integer('stock')->default(0); 
-            $table->softDeletes(); 
+            $table->string('name');
+            $table->string('sku')->unique(); // Tambahkan unique agar tidak ada SKU ganda
+            $table->text('description');
+            $table->integer('price');
+            $table->integer('stock');
+            $table->string('image')->nullable(); // nullable agar boleh kosong di awal
+            $table->boolean('is_active')->default(true);
+            $table->boolean('is_featured')->default(false);
             $table->timestamps();
         });
     }
