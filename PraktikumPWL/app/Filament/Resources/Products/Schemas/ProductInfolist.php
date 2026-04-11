@@ -29,7 +29,11 @@ class ProductInfolist
                             ->badge() 
                             ->color('success'), 
                         TextEntry::make('description') 
-                            ->label('Product Description'), 
+                            ->label('Product Description'),
+                        TextEntry::make('created_at') 
+                            ->label('Product Creation Date') 
+                            ->date('d M Y') 
+                            ->color('info'), 
                 ]),
                 Section::make('Product Price and Stock')
                     ->description('')
