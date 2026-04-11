@@ -30,7 +30,7 @@ class ProductForm
                                 MarkdownEditor::make('description') 
                         ]),
                         // Step::make('Product prices')
-                        Step::make('Pricing & Stock') 
+                        Step::make('Product Price and Stock') 
                             ->description('Isi harga dan jumlah stok') 
                             ->schema([ 
                                 Group::make([
@@ -40,7 +40,16 @@ class ProductForm
                                         ->required(),
                                 ])->columns(2),
                                 MarkdownEditor::make('description')
-                            ]),
+                        ]),
+                        Step::make('Media and Status') 
+                            ->description('Upload gambar dan atur status') 
+                            ->schema([ 
+                                FileUpload::make('image') 
+                                    ->disk('public') 
+                                    ->directory('products'), 
+                                Checkbox::make('is_active'), 
+                                Checkbox::make('is_featured'), 
+                        ]),
                 ])
                 ->columnSpanFull()
             ]);
