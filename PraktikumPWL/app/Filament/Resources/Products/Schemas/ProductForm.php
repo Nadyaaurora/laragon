@@ -36,6 +36,7 @@ class ProductForm
                             ->schema([ 
                                 Group::make([
                                     TextInput::make('price') 
+                                        ->numeric()
                                         ->required(), 
                                     TextInput::make('stock') 
                                         ->required(),
