@@ -18,11 +18,14 @@ class PostsTable
             ->columns([
                 //
                 TextColumn::make('title')
-                    ->sortable(), 
+                    ->sortable()
+                    ->searchable(), 
                 TextColumn::make('slug')
-                    ->sortable(), 
+                    ->sortable()
+                    ->searchable(), 
                 TextColumn::make('category.name')
-                    ->sortable(), 
+                    ->sortable()
+                    ->searchable(), 
                 ColorColumn::make('color'), 
                 ImageColumn::make('image') 
                     ->disk('public'),
