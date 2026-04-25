@@ -23,7 +23,7 @@ class PostsTable
                 //
                 TextColumn::make('id')
                     ->label('ID')
-                    ->sortable(),
+                    ->toggleable(),
                 TextColumn::make('title')
                     ->sortable()
                     ->searchable(), 
@@ -41,7 +41,8 @@ class PostsTable
                     ->dateTime() 
                     ->sortable(),
                 TextColumn::make('tags') 
-                    ->label('Tags'),
+                    ->label('Tags')
+                    ->toggleable(isToggledHiddenByDefault: true),
                 IconColumn::make('published') 
                     ->boolean()
             ])->defaultSort('created_at', 'asc')
