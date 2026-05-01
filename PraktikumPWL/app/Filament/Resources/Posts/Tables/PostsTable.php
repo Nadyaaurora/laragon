@@ -78,6 +78,7 @@ class PostsTable
                 DeleteAction::make(),
                 Action::make('status')
                 ->label('status change')
+                ->icon('heroicon-o-check-circle')
                 ->schema([
                     Checkbox::make('published')
                     ->default(fn($record): bool => $record->published),
@@ -95,4 +96,5 @@ class PostsTable
             ]);
     }
 }
+
 
