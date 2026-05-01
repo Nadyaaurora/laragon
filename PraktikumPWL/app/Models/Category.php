@@ -9,11 +9,12 @@ class Category extends Model
     //
     protected $fillable = [
         "name",
-        "members"
+        "slug"
     ];
 
-    protected $casts = [
-        'members' => 'array',
-    ];
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
 
