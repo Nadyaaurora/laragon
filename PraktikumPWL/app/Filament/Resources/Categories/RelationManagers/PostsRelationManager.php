@@ -27,6 +27,9 @@ class PostsRelationManager extends RelationManager
                 TextInput::make('title')
                     ->required()
                     ->maxLength(255),
+                TextInput::make('slug')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
