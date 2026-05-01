@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->foreignId('category_id')->constrained()->cascadeOnDelete(); // Ini untuk category
-            $table->string('color')->nullable(); // Ini kolom yang error sekarang
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete(); 
+            $table->string('color')->nullable(); 
             $table->string('image')->nullable();
             $table->text('body')->nullable();
             $table->json('tags')->nullable();
@@ -24,6 +24,11 @@ return new class extends Migration
             $table->date('published_at')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('tags', function (Blueprint $table) { 
+            $table->id(); 
+            $table->string('name'); 
+            $table->timestamps(); });
     }
 
     /**
