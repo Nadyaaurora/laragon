@@ -37,7 +37,11 @@ class PostsRelationManager extends RelationManager
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),
-            ])
+                TextColumn::make('slug')
+                    ->searchable(),
+                TextColumn::make('created_at')
+                    ->dateTime(),
+                ])
             ->filters([
                 //
             ])
