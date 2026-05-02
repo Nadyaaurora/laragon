@@ -68,7 +68,9 @@ class PostForm
                 ->schema([ 
                     //TagsInput::make('tags')
                     Select::make("tags")
-                        ->relationship("tags", "name"),
+                        ->relationship("tags", "name")
+                        ->multiple()
+                        ->preload(),
                     Checkbox::make("published"),
                     DateTimePicker::make("published_at")
                 ]),
