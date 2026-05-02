@@ -66,9 +66,11 @@ class PostForm
                 // section 3 - meta
                 Section::make('Meta Information') 
                 ->schema([ 
-                    TagsInput::make('tags'), 
-                    Checkbox::make('published'), 
-                    DateTimePicker::make('published_at'),
+                    //TagsInput::make('tags')
+                    Select::make("tags")
+                        ->relationship("tags", "name"),
+                    Checkbox::make("published"),
+                    DateTimePicker::make("published_at")
                 ]),
                     ])->columnSpan(1),
 
